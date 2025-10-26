@@ -73,8 +73,173 @@ Streamlit 1.39
 
 ### Installation
 
+Clone repository
+git clone https://github.com/yourusername/RAG_Predictive_Maintenance.git
+cd RAG_Predictive_Maintenance
+
+Install dependencies
+pip install -r requirements.txt
+
+Download NASA dataset
+Place train_FD001.txt in data/raw/
+
+
+### Training the Model
+
 Train LSTM model
 python -m src.model_training.train_pipeline
 
 Build RAG vector store
 python -m src.rag_system.build_vector_store
+
+
+### Running the Application
+
+streamlit run app/streamlit_app.py
+
+
+Access the dashboard at `http://localhost:8501`
+
+## 💻 Usage
+
+### 1. RUL Prediction
+
+- Navigate to **"RUL Prediction"** tab
+- Click **"Load Model"**
+- Click **"Predict RUL"** to get remaining useful life estimation
+- View confidence score and health status
+
+### 2. Maintenance Q&A
+
+- Navigate to **"Maintenance Q&A System"** tab
+- Click **"Load Knowledge Base"**
+- Ask questions about maintenance procedures
+- Get AI-powered answers from technical manuals
+
+### 3. System Status
+
+- View model performance metrics
+- Check system health indicators
+- Monitor prediction accuracy
+
+## 📈 Model Performance
+
+- **Architecture**: 2-layer LSTM with Dropout regularization
+- **Input**: 50 timesteps × 21 features
+- **Training**: 50 epochs, Adam optimizer
+- **Validation MAE**: ~15 cycles
+- **Prediction Confidence**: 85-95%
+
+## 🔬 Key Components
+
+### LSTM Model
+
+Layer 1: LSTM(50 units, return_sequences=True)
+
+Dropout: 0.2
+
+Layer 2: LSTM(50 units)
+
+Dropout: 0.2
+
+Output: Dense(1) - RUL prediction
+
+
+### RAG System
+
+Embeddings: sentence-transformers/all-MiniLM-L6-v2
+
+Vector Store: FAISS index
+
+Document Loader: PyPDF for maintenance manuals
+
+Chunk Size: 500 characters with 50 overlap
+
+
+
+## 📝 Features in Detail
+
+### Sensor Monitoring
+
+- **Temperature Sensors**: Fan inlet, LPC, HPC, LPT
+- **Pressure Sensors**: Static pressure, bypass ratio
+- **Performance Metrics**: Total temperature, enthalpy
+- **Operational Settings**: Altitude, Mach number, throttle
+
+### Intelligent Q&A
+
+- Natural language queries
+- Context-aware responses
+- Source citation from manuals
+- Real-time answer generation
+
+## 🎨 Screenshots
+
+![Dashboard](screenshots/dashboard.png)
+![Predictions](screenshots/predictions.png)
+![RAG Q&A](screenshots/rag_qa.png)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- NASA for the C-MAPSS dataset
+- Hugging Face for transformer models
+- Streamlit for the amazing framework
+
+## 📧 Contact
+
+- **Author**: Your Name
+- **Email**: your.email@example.com
+- **GitHub**: [@yourusername](https://github.com/yourusername)
+
+## 🔮 Future Enhancements
+
+- [ ] Multi-engine type support
+- [ ] Real-time sensor data integration
+- [ ] Anomaly detection alerts
+- [ ] Mobile application
+- [ ] API for external integrations
+- [ ] Advanced visualization dashboard
+
+---
+
+**Built with ❤️ using TensorFlow and Streamlit**
+
+📝 REQUIREMENTS.TXT
+Create this file:
+
+tensorflow==2.20.0
+streamlit==1.39.0
+pandas==2.2.3
+numpy==2.2.1
+scikit-learn==1.6.0
+matplotlib==3.10.0
+plotly==5.24.1
+langchain==0.3.13
+sentence-transformers==3.3.1
+faiss-cpu==1.9.0.post1
+pypdf==5.1.0
+torch==2.5.1
+transformers==4.47.1
+
+machine-learning
+deep-learning
+lstm
+predictive-maintenance
+rag
+streamlit
+tensorflow
+artificial-intelligence
+python
+data-science
+nlp
+vector-database
+faiss
+turbofan-engine
