@@ -47,19 +47,19 @@ RAG System ← Knowledge Base → Q&A Interface
 
 RAG_Predictive_Maintenance/
 ├── data/
-│ └── raw/ # NASA dataset files
+│   ├── raw/                    # NASA dataset files
+│   ├── processed/              # Preprocessed data outputs
+│   └── manuals/                # Technical PDF manuals
 ├── src/
-│ ├── data_preprocessing/ # Data loading & preprocessing
-│ ├── model_training/ # LSTM model training
-│ └── rag_system/ # RAG implementation
+│   ├── data_preprocessing/     # Data loading & preprocessing scripts
+│   ├── model_training/         # LSTM model training code
+│   └── rag_system/             # RAG implementation
 ├── models/
-│ ├── lstm/ # Trained LSTM models
-│ └── rag/ # Vector store index
-├── maintenance_manuals/
-│ └── pdfs/ # Technical manuals
+│   └── lstm/                   # Trained LSTM models
 ├── app/
-│ └── streamlit_app.py # Web interface
-└── README.md
+│   └── streamlit_app.py        # Web interface (or keep in root)
+└── README.md                   # Project documentation
+
 
 
 ## 🚀 Quick Start
@@ -215,31 +215,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 📝 REQUIREMENTS.TXT
 Create this file:
 
-tensorflow==2.20.0
-streamlit==1.39.0
-pandas==2.2.3
-numpy==2.2.1
-scikit-learn==1.6.0
-matplotlib==3.10.0
-plotly==5.24.1
-langchain==0.3.13
-sentence-transformers==3.3.1
-faiss-cpu==1.9.0.post1
-pypdf==5.1.0
-torch==2.5.1
-transformers==4.47.1
 
-machine-learning
-deep-learning
-lstm
-predictive-maintenance
-rag
-streamlit
-tensorflow
-artificial-intelligence
-python
-data-science
-nlp
-vector-database
-faiss
-turbofan-engine
